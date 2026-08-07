@@ -144,15 +144,6 @@ const Hero = forwardRef<HTMLElement>((_props, ref) => {
         </div>
       </div>
 
-      {/* ── Side label ── */}
-      <div className="absolute right-4 top-1/2 -translate-y-1/2 z-20 hidden lg:block">
-        <p
-          className="text-white/30 text-[10px] uppercase tracking-[0.3em] rotate-90 origin-center whitespace-nowrap"
-          style={{ fontFamily: "'JetBrains Mono', monospace" }}
-        >
-          Thành Lập 2018 — Sài Gòn
-        </p>
-      </div>
     </section>
   );
 });
