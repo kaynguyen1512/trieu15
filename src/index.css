@@ -156,6 +156,18 @@ body {
   }
 }
 
+/* iPad/tablet portrait at the desktop-width edge (1024–1099px) on a tall
+   screen. At 1024px the desktop rules apply (80px bottom padding), but
+   the #hero-scroll indicator is visible (md+). On a tall viewport the
+   CTA row collides with the indicator. This narrow override reserves a
+   bottom safe area ONLY for this geometry — short desktops (1024×768,
+   1440×900) keep the original 80px and are visually unchanged. */
+@media (min-width: 1024px) and (max-width: 1099px) and (min-height: 1100px) {
+  :root {
+    --hero-stack-padding-bottom: clamp(120px, 16vh, 160px);
+  }
+}
+
 /* The stack fills the Hero; the inner block holds the four flow items. */
 .hero-stack {
   padding-left: var(--hero-stack-padding-left);
