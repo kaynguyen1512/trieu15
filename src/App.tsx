@@ -1,18 +1,19 @@
-import { useRef, useLayoutEffect, useState, useEffect } from 'react';
+import { useRef, useLayoutEffect, useState, useEffect, lazy, Suspense } from 'react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import VideoShowcase from '@/components/VideoShowcase';
-import HairGallery from '@/components/HairGallery';
-import ServicesPricing from '@/components/ServicesPricing';
-import Stylists from '@/components/Stylists';
-import BookingCTA from '@/components/BookingCTA';
-import Reviews from '@/components/Reviews';
-import MapSection from '@/components/MapSection';
-import Footer from '@/components/Footer';
 import IntroOverlay from '@/components/IntroOverlay';
 import FloatingContact from '@/components/FloatingContact';
+
+const HairGallery = lazy(() => import('@/components/HairGallery'));
+const ServicesPricing = lazy(() => import('@/components/ServicesPricing'));
+const Stylists = lazy(() => import('@/components/Stylists'));
+const BookingCTA = lazy(() => import('@/components/BookingCTA'));
+const Reviews = lazy(() => import('@/components/Reviews'));
+const MapSection = lazy(() => import('@/components/MapSection'));
+const Footer = lazy(() => import('@/components/Footer'));
 
 gsap.registerPlugin(SplitText);
 
@@ -270,13 +271,15 @@ function App() {
       <main>
         <Hero ref={heroRef} />
         <VideoShowcase />
-        <HairGallery />
-        <ServicesPricing />
-        <Stylists />
-        <BookingCTA />
-        <Reviews />
-        <MapSection />
-        <Footer />
+        <Suspense fallback={<div className="min-h-[50vh] bg-[#FAF8F5]" />}>
+          <HairGallery />
+          <ServicesPricing />
+          <Stylists />
+          <BookingCTA />
+          <Reviews />
+          <MapSection />
+          <Footer />
+        </Suspense>
       </main>
 
       <FloatingContact ref={floatingRef} />
