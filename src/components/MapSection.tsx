@@ -209,6 +209,8 @@ export default function MapSection() {
                 ref={imgRef}
                 src={MAP_IMAGE}
                 alt="Map showing Triệu Tóc Đẹp salon location"
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover/map:scale-[1.03]"
               />
             </div>

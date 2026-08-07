@@ -64,7 +64,7 @@ export default function HairGallery() {
               <img
                 src={src}
                 alt={`Mẫu tóc ${i + 1}`}
-                loading={i < 8 ? 'eager' : 'lazy'}
+                loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
               />
             </div>

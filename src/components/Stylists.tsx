@@ -74,6 +74,8 @@ export default function Stylists() {
                 <img
                   src={stylist.img}
                   alt={stylist.name}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
               </div>
