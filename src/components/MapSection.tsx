@@ -57,6 +57,10 @@ export default function MapSection() {
     const img = imgRef.current;
     if (!map || !img) return;
 
+    // The parallax effect is a mouse-only interaction. On touch devices
+    // (no fine pointer) it has no meaningful purpose, so skip attaching
+    // the listeners and the requestAnimationFrame loop entirely.
+    if (!window.matchMedia('(pointer: fine)').matches) return;
     let raf = 0;
     const target = { x: 0, y: 0 };
     const current = { x: 0, y: 0 };
