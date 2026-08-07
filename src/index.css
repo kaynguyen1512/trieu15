@@ -134,7 +134,11 @@ body {
     --hero-title-font-size: clamp(44px, 7.2vw, 88px);
     --hero-description-font-size: 15px;
     --hero-description-max-width: 460px;
-    --hero-stack-padding-bottom: 72px;
+    /* Reserve a bottom safe area so the CTA row clears the centered
+       scroll-down indicator (visible at md+). Scales with viewport
+       height so short tablets get enough clearance without pushing
+       content too high on tall ones. */
+    --hero-stack-padding-bottom: clamp(120px, 16vh, 160px);
     --hero-stack-padding-left: 48px;
   }
 }
