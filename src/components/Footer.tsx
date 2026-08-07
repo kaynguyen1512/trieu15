@@ -15,7 +15,7 @@ export default function Footer() {
               className="text-[13px] leading-[1.8] text-white/50"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              Salon tóc cao cấp Sài Gòn. Nơi mỗi mái tóc là một tác phẩm nghệ thuật.
+              Salon tóc cao cấp Lái Thiêu. Nơi mỗi mái tóc là một tác phẩm nghệ thuật.
             </p>
           </div>
 
